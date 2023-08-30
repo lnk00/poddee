@@ -12,7 +12,7 @@ export interface CuratedPodcastsListProps
 const CuratedPodcastsLists = React.forwardRef<
   HTMLDivElement,
   CuratedPodcastsListProps
->(({ className, curatedPodcastsLists, ...props }) => {
+>(({ className, curatedPodcastsLists, ...props }, _ref) => {
   return (
     <div className={className} {...props}>
       {curatedPodcastsLists.map((list, idx) => (

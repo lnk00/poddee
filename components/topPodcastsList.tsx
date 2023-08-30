@@ -9,11 +9,11 @@ export interface TopPodcastsListProps
 }
 
 const TopPodcastsList = React.forwardRef<HTMLDivElement, TopPodcastsListProps>(
-  ({ className, podcasts, ...props }) => {
+  ({ className, podcasts, ...props }, _ref) => {
     return (
       <div className={className} {...props}>
         {podcasts.slice(0, 3).map((p, idx) => (
-          <div className='mb-8' {...props}>
+          <div key={idx} className='mb-8' {...props}>
             <div className='relative w-fit'>
               <Image
                 src={`/${idx + 1}.png`}

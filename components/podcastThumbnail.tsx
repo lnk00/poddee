@@ -7,7 +7,7 @@ export interface PodcastThumbnailProps
 const PodcastThumbnail = React.forwardRef<
   HTMLImageElement,
   PodcastThumbnailProps
->(({ className, ...props }) => {
+>(({ className, ...props }, _ref) => {
   return (
     <div className='rounded-md overflow-hidden relative cursor-pointer w-fit'>
       <img {...props} />
