@@ -16,6 +16,9 @@ module.exports = {
       },
     },
     extend: {
+      height: {
+        content: "calc(100vh - 6rem)"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

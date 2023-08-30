@@ -1,6 +1,10 @@
+import { Input } from '@/components/ui/input';
 import '../styles/globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { Button } from '@/components/ui/button';
+import { SearchIcon } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,7 +20,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className='container'>
+          <div className='h-24 flex items-center justify-between border-b border-muted'>
+            <h1 className='scroll-m-20 text-xl font-extrabold tracking-tight lg:text-2xl'>
+              Poddee
+            </h1>
+            <div className='flex w-full max-w-xl items-center space-x-2 ml-8'>
+              <Input type='text' placeholder='Search podcast' />
+              <Button className='shrink-0' type='submit' size={'icon'}>
+                <SearchIcon className={'h-4 w-4'} />
+              </Button>
+            </div>
+            <Avatar>
+              <AvatarImage src='https://github.com/shadcn.png' alt='@shadcn' />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </div>
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
